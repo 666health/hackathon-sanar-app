@@ -5,6 +5,7 @@ import DoctorLogin from './pages/login/doctor';
 import PatientLogin from './pages/login/patient';
 import Calendar from './pages/home';
 import BottomNavigation from './components/bottom-bar';
+import Topbar from './components/topbar';
 
 const Medicamentos = () => <span>Medicamentos</span>
 const Alarms = () => <span>Alarms</span>
@@ -12,6 +13,7 @@ const Alarms = () => <span>Alarms</span>
 function App() {
   return (
     <Router>
+      <Topbar />
       <div>
         <Route path="/" exact component={Calendar} />
         <Route path="/paciente/login" exact component={PatientLogin} />
