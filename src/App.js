@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import LoginPage from './pages/login';
 
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <div>
         <Route path="/" exact component={Index} />
+        <Route path="/login" exact component={LoginPage} />
         <Route path="/about/" component={About} />
         <Route path="/users/" component={Users} />
       </div>
