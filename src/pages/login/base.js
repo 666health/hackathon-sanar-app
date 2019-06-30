@@ -72,7 +72,7 @@ class BaseLogin extends Component {
             className={classes.title}
             variant='h4'
           >
-            Logar como {isDoctor ? 'Médico' : 'Paciente'}
+            Bem vindo, {isDoctor ? 'Médico' : 'Paciente'}
           </Typography>
           <TextField
             id='user'
