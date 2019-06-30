@@ -31,12 +31,12 @@ const styles = theme => ({
   }
 });
 
-class BaseLogin extends Component {
+class BaseRegister extends Component {
   state = {
     user: '',
     pass: '',
-    hasError: false,
-    isRegister: false
+    name: '',
+    hasError: false
   };
 
   handleChange = name => event => {
@@ -46,10 +46,9 @@ class BaseLogin extends Component {
   };
 
   onSubmit = async () => {
-    console.log('on submit');
-    const { user, pass } = this.state;
+    const { user, pass, name } = this.state;
 
-    UserService.login(user, pass)
+    UserService.register(name, user, pass)
       .then(({ data: { token } }) => this.handleSuccess(token))
       .catch(() => this.setState({ hasError: true }));
   };
@@ -72,13 +71,25 @@ class BaseLogin extends Component {
             className={classes.title}
             variant='h4'
           >
-            Logar como {isDoctor ? 'Médico' : 'Paciente'}
+            Registrar como {isDoctor ? 'Médico' : 'Paciente'}
           </Typography>
+          <TextField
+            id='name'
+            label='Nome'
+            autoComplete='off'
+            placeholder='Ex: John Doe'
+            InputLabelProps={{
+              shrink: true
+            }}
+            value={this.state.name}
+            onChange={this.handleChange('name')}
+            margin='normal'
+          />
           <TextField
             id='user'
             label='Usuário'
             autoComplete='off'
-            placeholder='Ex: John Doe'
+            placeholder='Ex: JohnDoe'
             InputLabelProps={{
               shrink: true
             }}
@@ -101,7 +112,7 @@ class BaseLogin extends Component {
           />
           {this.state.hasError && (
             <Typography color='error' variant='subtitle1'>
-              Usuario ou senha incorreta
+              Dados inválidos
             </Typography>
           )}
           <Button
@@ -119,11 +130,11 @@ class BaseLogin extends Component {
             onClick={() => {
               console.log('onclick');
               this.props.history.push(
-                isDoctor ? '/paciente/login' : '/medico/login'
+                isDoctor ? '/paciente/register' : '/medico/register'
               );
             }}
           >
-            {isDoctor ? 'Usar como paciente' : 'Usar como médico'}
+            {isDoctor ? 'Registrar como paciente' : 'Registrar como médico'}
           </Typography>
         </div>
       </div>
@@ -131,4 +142,4 @@ class BaseLogin extends Component {
   }
 }
 
-export default withStyles(styles)(BaseLogin);
+export default withStyles(styles)(BaseRegister);
