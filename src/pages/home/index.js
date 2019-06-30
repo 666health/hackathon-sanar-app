@@ -1,5 +1,8 @@
 import React from "react";
 import Calendar from "react-big-calendar";
+import Fab from "@material-ui/core/Fab";
+import Icon from "@material-ui/core/Icon";
+import { makeStyles } from "@material-ui/core/styles";
 
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -32,7 +35,17 @@ const events = [
   }
 ];
 
+const useStyles = makeStyles(theme => ({
+  fab: {
+    position: "fixed",
+    right: "24px",
+    bottom: "80px"
+  }
+}));
+
 function Home() {
+  const classes = useStyles();
+
   return (
     <div>
       <Calendar
@@ -42,6 +55,7 @@ function Home() {
         events={events}
         startAccessor="start"
         endAccessor="end"
+        // components={{ toolbar: () => <span>span</span> }}
         messages={{
           allDay: "Dia inteiro",
           previous: "Anterior",
@@ -56,6 +70,9 @@ function Home() {
           event: "Compromisso"
         }}
       />
+      <Fab color="primary" aria-label="Add" className={classes.fab}>
+        <Icon>add</Icon>
+      </Fab>
     </div>
   );
 }

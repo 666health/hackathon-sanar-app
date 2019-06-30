@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import DoctorLogin from './pages/login/doctor';
 import PatientLogin from './pages/login/patient';
 import Calendar from './pages/home';
+import Alarms from './pages/alarms';
 import BottomNavigation from './components/bottom-bar';
 import Topbar from './components/topbar';
 
 const Medicamentos = () => <span>Medicamentos</span>
-const Alarms = () => <span>Alarms</span>
 
 function App() {
   return (
