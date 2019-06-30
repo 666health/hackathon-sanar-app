@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "8"
+
+script:
+  - npm run build
+
+deploy:
+  provider: firebase
+  token:
+    secure: "dWsH6rjSeSUgT3ZZd+icSNzcW4/3vvvAceeFzyTBlNF/WdSKN9Rx/bDpjO759c/iXQbudMIyD+JM5ezeM6cxLxvyDsL4ArPTg3yJvjMgg9e80VvJLnYc0ZQhu2ef/RKrpY6XMownY5R7dRo17JJwG8IrxKByLvqV4NpyrTmpARAB0yLQZdz1gqaugymtmC/qM/Yid0C+Bz4jeejCu3Jouezf60vZZWQ++jx0+lB5XfG3srQVoLflCIcpsQlvMdx6pr482/uY8EAQXEF1WkCzVeavuHufjTT3QN8KSzokfVbfbfTDbV3bRxS7ZRGcmKHFp69y4Gm7MKTPHEmK3xaVe8DUC0c+THswSnQRTpnGOMtDrOIQvOzZ4U2hxug1aaX+SwnReAmCC0D7L2A2AzuGPH+YRpWL+DqenLKeBG/n8jVfCjZKUcQwLbPstciFYM7qw0z+dM+onIM7Q9LMmtrcHeXAcrcEgpIXIyyiMS6BbwBkgpxxWX+Da8z21X2ShrvjIfkEh2pKRKO0t244bDapAZrv5ftrN3Yu+l0RlMqlWMQDl60r4xMDW1a/AqoUYbOhAdkx8r8l/6MqH5ADv+1mKqssptxT/EsZd+WcP/x+4zaJRgxkY7c31b3tkk2r4NY34tUq8ZBI04FP6e2Newcfc21EiOwndw74MtsADf0od5o="
+  project: "health-hackaton"
+  skip_cleanup: true
