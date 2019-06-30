@@ -2,7 +2,7 @@ import React from 'react';
 import Calendar from 'react-big-calendar';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 
 import { askForPermissioToReceiveNotifications } from '../../config/firabase-config';
 import NotificationService from '../../services/NotificationService';
@@ -38,25 +38,28 @@ const events = [
   }
 ];
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   fab: {
     position: 'fixed',
     right: '24px',
     bottom: '80px'
   }
-}));
+});
 
 class Home extends React.Component {
   async componentDidMount() {
-    const token = await askForPermissioToReceiveNotifications();
+    const authToken = localStorage.getItem('token');
+    const notificationToken = authToken ? await askForPermissioToReceiveNotifications() : null;
 
-    NotificationService.setPushToken(token).catch(err => {
-      console.log(err);
-    });
+    if (notificationToken) { 
+      NotificationService.setPushToken(notificationToken).catch(err => {
+        console.log(err);
+      });
+    }
   }
 
   render() {
-    const { classes } = useStyles();
+    const { classes } = this.props;
 
     return (
       <div>
@@ -89,4 +92,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withStyles(styles)(Home);

@@ -12,10 +12,12 @@ import Topbar from './components/topbar';
 import Treatments from './pages/treatments';
 
 function App() {
-  console.log('app');
+  const authToken = localStorage.getItem('token');
+  console.log({ authToken });
+  const isLoggedUser = !!authToken
   return (
     <Router>
-      <Topbar />
+      {isLoggedUser && <Topbar />}
       <div>
         <Route path='/' exact component={Calendar} />
         <Route path='/paciente/login' exact component={PatientLogin} />
@@ -25,7 +27,7 @@ function App() {
         <Route path='/alarmes' exact component={Alarms} />
         <Route path='/tratamentos' exact component={Treatments} />
       </div>
-      <BottomNavigation />
+      {isLoggedUser && <BottomNavigation />}
     </Router>
   );
 }
