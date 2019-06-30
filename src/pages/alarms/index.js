@@ -10,9 +10,7 @@ import Fab from "@material-ui/core/Fab";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper
+    width: "100%"
   },
   fab: {
     position: "fixed",
@@ -43,7 +41,7 @@ export default function FolderList() {
     <div>
     <List className={classes.root}>
       {alarms.map(a => (
-        <ListItem>
+        <ListItem button href="#">
           <ListItemAvatar>
             <Avatar>
               <Icon>alarm</Icon>
