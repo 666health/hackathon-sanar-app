@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Calendar from 'react-big-calendar';
+import Fab from '@material-ui/core/Fab';
+import Icon from '@material-ui/core/Icon';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { askForPermissioToReceiveNotifications } from '../../config/firabase-config';
 import NotificationService from '../../services/NotificationService';
@@ -35,6 +38,14 @@ const events = [
   }
 ];
 
+const useStyles = makeStyles(theme => ({
+  fab: {
+    position: 'fixed',
+    right: '24px',
+    bottom: '80px'
+  }
+}));
+
 class Home extends React.Component {
   async componentDidMount() {
     const token = await askForPermissioToReceiveNotifications();
@@ -45,6 +56,8 @@ class Home extends React.Component {
   }
 
   render() {
+    const { classes } = useStyles();
+
     return (
       <div>
         <Calendar
@@ -68,6 +81,9 @@ class Home extends React.Component {
             event: 'Compromisso'
           }}
         />
+        <Fab color='primary' aria-label='Add' className={classes.fab}>
+          <Icon>add</Icon>
+        </Fab>
       </div>
     );
   }
