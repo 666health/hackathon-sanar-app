@@ -58,9 +58,6 @@ export default function AlignItemsList() {
         />
       </ListItem>
       <Divider variant="inset" component="li" />
-      <Fab color="primary" aria-label="Add" className={classes.fab}>
-        <Icon>add</Icon>
-      </Fab>
     </List>
   );
 }
