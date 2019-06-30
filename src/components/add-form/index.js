@@ -139,7 +139,7 @@ class AddForm extends Component {
                         InputLabelProps={{
                           shrink: true
                         }}
-                        value={this.state.user}
+                        value={this.state.medicineName}
                         onChange={this.handleChange("medicineName")}
                         margin="normal"
                       />
@@ -154,9 +154,8 @@ class AddForm extends Component {
                           shrink: true
                         }}
                         placeholder="Ex: ********"
-                        type="password"
-                        value={this.state.pass}
-                        onChange={this.handleChange("pass")}
+                        value={this.state.description}
+                        onChange={this.handleChange("description")}
                         margin="normal"
                       />
                     </div>
