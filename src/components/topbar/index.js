@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 
 const routesTitlesMap = {
   "/": "Agenda",
-  "/medicamentos": "Meus medicamentos",
+  "/tratamentos": "Meus tratamentos",
   "/alarmes": "Meus alarmes"
 };
 
