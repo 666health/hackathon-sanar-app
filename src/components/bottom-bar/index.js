@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 
 const routesMap = {
   0: '',
-  1: 'medicamentos',
+  1: 'tratamentos',
   2: 'alarmes',
 }
 
@@ -37,7 +37,7 @@ const SimpleBottomNavigation = (props) => {
       className={classes.root}
     >
       <BottomNavigationAction label="Agenda" icon={<Icon>calendar_today</Icon>} />
-      <BottomNavigationAction label="Medicamentos" icon={<Icon>local_hospital</Icon>} />
+      <BottomNavigationAction label="Tratamentos" icon={<Icon>local_hospital</Icon>} />
       <BottomNavigationAction label="Alarmes" icon={<Icon>alarm</Icon>} />
     </BottomNavigation>
   );

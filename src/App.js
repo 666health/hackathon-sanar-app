@@ -7,8 +7,7 @@ import Calendar from './pages/home';
 import Alarms from './pages/alarms';
 import BottomNavigation from './components/bottom-bar';
 import Topbar from './components/topbar';
-
-const Medicamentos = () => <span>Medicamentos</span>
+import Treatments from './pages/treatments';
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
         <Route path="/" exact component={Calendar} />
         <Route path="/paciente/login" exact component={PatientLogin} />
         <Route path="/medico/login" exact component={DoctorLogin} />
-        <Route path="/medicamentos" exact component={Medicamentos} />
+        <Route path="/tratamentos" exact component={Treatments} />
         <Route path="/alarmes" exact component={Alarms} />
       </div>
       <BottomNavigation />
