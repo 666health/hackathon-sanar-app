@@ -28,12 +28,12 @@ const events = [
     end: new Date(moment().subtract(2.5, "hours"))
   },
   {
-    title: "Minoxidil",
+    title: "Amoxilina",
     start: new Date(moment().subtract(6.5, "hours")),
     end: new Date(moment().subtract(6, "hours"))
   },
   {
-    title: "Minoxidil",
+    title: "Tetracilina",
     start: new Date(moment().subtract(8.5, "hours")),
     end: new Date(moment().subtract(8, "hours"))
   }

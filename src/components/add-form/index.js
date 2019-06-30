@@ -23,7 +23,6 @@ const styles = theme => ({
     width: "100%"
   },
   formWrapper: {
-    // width: 400,
     display: "flex",
     flexDirection: "column"
   },
@@ -46,7 +45,6 @@ const styles = theme => ({
   inputWrapper: {
       width: '100%',
       padding: '16px 0',
-
   }
 });
 
