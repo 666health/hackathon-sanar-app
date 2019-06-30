@@ -6,7 +6,6 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Icon from "@material-ui/core/Icon";
-import Fab from "@material-ui/core/Fab";
 import Divider from "@material-ui/core/Divider";
 
 import ItemModal from './item';

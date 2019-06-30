@@ -13,8 +13,6 @@ export default class Scanner extends Component {
   }
 
   componentDidMount() {
-    const qrScanner = new QrScanner(this.ref, result => console.log('decoded qr code:', result));
-
     const scanner = new QrScanner(this.ref, result => this.setResult(result));
     scanner.start();
   }
